@@ -1,0 +1,21 @@
+.worksContainer {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.work {
+  align-items: center;
+  background: #eee;
+  border-radius: 8px;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  justify-items: center;
+  width: 300px;
+}
+
+.work p {
+  font-size: xx-large;
+  font-weight: bold;
+}
