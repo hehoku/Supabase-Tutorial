@@ -1,0 +1,41 @@
+div.create {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: 4rem 2rem;
+  width: 50%;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+input {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+button {
+  background-color: rgb(38, 208, 151);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 4rem;
+  width: 12rem;
+}
+
+p.error {
+  color: red;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import supabase from "../config/supabaseClient";
+import "./create.css";
 
 const Create = () => {
   let [title, setTitle] = useState("");
@@ -57,9 +58,9 @@ const Create = () => {
             onChange={(e) => setUrl(e.target.value)}
           />
         </label>
+        {formError && <p className="error">*{formError}</p>}
         <button>Add New Project</button>
       </form>
-      {formError && <p>{formError}</p>}
     </div>
   );
 };
