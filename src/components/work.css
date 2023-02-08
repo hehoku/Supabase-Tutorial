@@ -1,0 +1,11 @@
+.work {
+  position: relative;
+}
+.work button {
+  background-color: gainsboro;
+  bottom: 20px;
+  height: 40px;
+  position: absolute;
+  right: 20px;
+  width: 40px;
+}
