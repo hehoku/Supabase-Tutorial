@@ -53,15 +53,17 @@ const Update = () => {
         title: title,
         url: url,
       })
-      .eq("id", workId);
+      .eq("id", workId)
+      .select();
 
     if (error) {
       setFormError(error);
     }
-    // update return null
-    console.log("update return data: ", data);
 
-    return navigate("/");
+    if (data) {
+      console.log("update return data: ", data);
+      return navigate("/");
+    }
   };
   return (
     <div className="page update">
