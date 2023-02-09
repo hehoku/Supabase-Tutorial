@@ -9,7 +9,10 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorks = async () => {
-      let { data, error } = await supabase.from("works").select();
+      let { data, error } = await supabase
+        .from("works")
+        .select()
+        .order("id", { ascending: true });
 
       if (error) {
         setFetchError("Could not fetch the works");
