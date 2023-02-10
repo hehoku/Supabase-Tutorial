@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import supabase from "../config/supabaseClient";
+import "./update.css";
 
 const Update = () => {
   const [fetchError, setFetchError] = useState(null);
@@ -68,29 +69,31 @@ const Update = () => {
   return (
     <div className="page update">
       <h2>Update</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">
-          Title:
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </label>
-        <label htmlFor="url">
-          Url:
-          <input
-            type="text"
-            name="url"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
-        </label>
-        {formError && <p className="error">*{formError}</p>}
-        {fetchError && <p className="error">*{fetchError}</p>}
-        <button>Update Project</button>
-      </form>
+      <div className="formContainer">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="title">
+            Title:
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </label>
+          <label htmlFor="url">
+            Url:
+            <input
+              type="text"
+              name="url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+            />
+          </label>
+          {formError && <p className="error">*{formError}</p>}
+          {fetchError && <p className="error">*{fetchError}</p>}
+          <button>Update Project</button>
+        </form>
+      </div>
     </div>
   );
 };
