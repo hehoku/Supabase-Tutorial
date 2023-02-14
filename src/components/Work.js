@@ -5,7 +5,7 @@ import supabase from "../config/supabaseClient";
 import "../config/supabaseClient";
 import "./work.css";
 
-export default function Work({ work }) {
+export default function Work({ work, onDelete }) {
   let handleDelete = async () => {
     let { data, error } = await supabase
       .from("works")
@@ -15,6 +15,7 @@ export default function Work({ work }) {
 
     if (data) {
       console.log(data);
+      onDelete(data.id);
     }
 
     if (error) {

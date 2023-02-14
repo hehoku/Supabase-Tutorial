@@ -7,6 +7,12 @@ const Home = () => {
   const [fetchError, setFetchError] = useState(null);
   const [works, setWorks] = useState(null);
 
+  const handleDelete = (id) => {
+    setWorks((prevWorks) => {
+      prevWorks.filter((work) => work.id !== id);
+    });
+  };
+
   useEffect(() => {
     const fetchWorks = async () => {
       let { data, error } = await supabase
@@ -36,7 +42,7 @@ const Home = () => {
       {works && (
         <div className="worksContainer">
           {works.map((item) => (
-            <Work key={item.id} work={item} />
+            <Work key={item.id} onDelete={handleDelete} work={item} />
           ))}
         </div>
       )}
